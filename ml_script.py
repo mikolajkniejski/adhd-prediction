@@ -14,10 +14,13 @@ df = pd.read_excel(r'./Samlet_Data.xlsx')
 pred = pd.read_excel(r'./predict.xlsx')
 
 # %%
+# Reading-in our data, creating a X and Y variable
 x = df.drop(['ADHD', 'Person'], axis="columns")
 y = df['ADHD']
 
 # %%
+# Using a train_test_split function that gives us an X train data frame
+# and a Y train data frame, used to appropriately train our model
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.2)
 
 # %%
